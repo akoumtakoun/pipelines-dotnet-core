@@ -3,11 +3,12 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-jobs:
-- job: Debug
+jobs: 
+- job: A
   steps:
-  - script: echo hello from the Debug build
-- job: Release
-  dependsOn: Debug
-  steps: 
-  - script: echo hello from the Release build
+  - script: echo hello
+- job: B
+  dependsOn: A
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+  steps:
+  - script: echo this only runs for master
