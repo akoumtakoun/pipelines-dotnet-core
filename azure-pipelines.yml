@@ -3,12 +3,11 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-stages:
-- stage: A
-  jobs:
-  - job: A1
-  - job: A2
-- stage: B
-  jobs:
-  - job: B1
-  - job: B2
+jobs:
+- job: Debug
+  steps:
+  - script: echo hello from the Debug build
+- job: Release
+  dependsOn: Debug
+  steps: 
+  - script: echo hello from the Release build
