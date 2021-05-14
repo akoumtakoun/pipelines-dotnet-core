@@ -15,4 +15,6 @@ jobs:
 pr:
   - main
   - develop 
-  
+trigger:
+  - main
+  - test  
