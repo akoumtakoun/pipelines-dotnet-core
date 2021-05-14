@@ -15,4 +15,3 @@ jobs:
 pr:
   - main
   - develop 
-  
