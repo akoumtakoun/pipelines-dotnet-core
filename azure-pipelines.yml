@@ -12,3 +12,7 @@ jobs:
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   steps:
   - script: echo this only runs for master
+pr:
+  - main
+  - develop 
+  
